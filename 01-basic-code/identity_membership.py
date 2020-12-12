@@ -17,4 +17,5 @@ print(c not in a)
 # print (c not in b) # Membandingkan bukan list / string . TypeError: argument of type 'int' is not iterable
 # print(a in s) # TypeError: 'in <string>' requires string as left operand, not list
 # print(b not in s) # TypeError: 'in <string>' requires string as left operand, not int
-print(str(b) not in s)
+print(str(b) in s)
+print((3 + 5 ** 2 - 2)*2)

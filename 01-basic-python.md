@@ -96,7 +96,7 @@
 
 - Operator Aritmatika -> + - * 3, ada power operator ** (seperti Math.pow())
 - Parenthesis () -> menunjukkan operasi mana yang akan di consider menjadi expression pertama / prioritas didahulukan
-- Operator punya higher desendent dibanding lainnya. Prioritasnya adalah () -> ** -> * / -> + -
+- Operator punya higher desendent dibanding lainnya. Prioritasnya adalah () -> ** -> * / -> + - (sama tergantung posisi / duluan)
 - Bracket dibutuhkan selama bagian operator depan lebih rendah prioritas (lower-precedence) dibanding operator belakangnya
 - Precedence itu -> left to right
 - Ketika ada float number maka hasil perhitungan selalu mengubah hasil dari integer ke float
@@ -160,8 +160,6 @@
 
 - Slice dari index 0, maka tidak perlu ditulis angka pertamanya misal -> `name9 = name2[:6]`
 
-
-
 - String Formating dengan Concatination -> +
 
 - Jika ingin menggunakan format yang lebih mudah seperti Template Literal di JS -> `"text1 {} text2 {}".format(var1, var2)`
@@ -175,20 +173,7 @@
   f = "Hello {} {}".format(d, e)
   ```
 
-- User bisa input sesuai (nilai dari variabel belum pasti) gunakan `.format()` (dynamis) dibanding concat (statis)
-
-- Gunakan input untuk memasukkan value dari user, terminal akan menunggu sampai user memasukkan value lalu `<enter>`
-
-- Defaultnya antar {} diurutkan. Kalau dibuat urutan gak default gunakan angka -> `{0} {1} {2}` (lebih kecil diurutkan seperti di array)
-
-  ```python
-  ee = input()
-  ef = input()
-  f = "Hello {} {}".format(ee, ef)
-  g = "My Name is {1} {0}".format("Setiawan", "Sofyan")
-  ```
-
-- Mau seperti template literal di JS, gunakan `f` sebelum quote string `""` -> `f"my name is {firstname} {lastname}"`
+- Gunakan `.format()` (dynamis) dibanding concat (statis)
 
 
 
@@ -252,6 +237,7 @@
   - Bitwise (less usage)
 
 - Arithmetic (Kalkulasi Matematik)
+
   - `+` (addition) -> untuk number atau concat string
   - `-` (substract)
   - `*` (multiply)
@@ -261,20 +247,26 @@
   - `%` (remainder)
     - Ada left portion -> pengurangan (bukan pembagian) terus menerus sampai sisa
   - `**` (double-star -> pow / pangkat)
+
 - Assignment
+
   - Assign value di python -> langsung override tipe datanya
   - `x += 2` -> `x = x + 2`
   - Contohnya -> `+=`, `-=`, `*=`, `/=`, `%=`, `**=`, `//=`
   - Increment, decrement, mutiple -> seperti di Javascript
   - Biasanya digunakan di dalam loop
+
 - Comparison
+
   - Comparison -> pembanding antar 2 value
   - Hasil dari Comparison -> Boolean `True` / `False` (Truthy - Falsy)
   - Misalnya -> `2 == 2` -> True . `3 == "Halo"` -> False
   - Negasi `!=`, Lebih besar `>`, Lebih besar atau sama dengan `>=`, Lebih kecil `<`, Lebih kecil atau sama dengan `<=`
   - Bagian `>=` , `<=` bersifat ATAU jadi jika memenuhi kriteria salah satu -> True, jika tidak ada kriteria -> False 
   - Strict Comparison??
+
 - Logical Operator
+
   - Terdiri dari -> `and`, `or`, `not`
   - `and`-> kalau dari 2 kondisi (comparison) semua menghasilkan True -> True, jika 1 kondisi menghasilkan False, 1 nya True -> False
   - `or`-> kalau dari 2 kondisi (comparison) semua menghasilkan True -> True, jika 1 kondisi menghasilkan False, 1 nya menghasilkan True -> True (minimal 1 saja)
@@ -282,16 +274,87 @@
   - Contoh and => `3 > 2 and 4 > 2` => True and True -> True
     - `3 > 2 and 4 > 2 and 2 > 1` => True and True and True -> True
   - Contoh or => `3 > 2 or 2 > 2` => True or False -> True
-    - `3 > 4 *or* 2 > 3` => False or False -> False
+    - `3 > 4 or 2 > 3` => False or False -> False
   - Contoh not => `not 3 > 2` => !True (negasi) => False
+
 - Identity Operator & Membership
+
   - Identity dan membership menghasilkan -> True / False (Truthy Falsy)
+
   - Terdiri -> `is`, `is not`
+
     - is -> `==` (equals)
     - is not `!=` (not equals)
+
   - Terdiri -> `in`, `not in`
+
     - in -> include in list/string?
     - not in -> not include in list/string?
     - Membership tidak bisa membandingkan tipe data yang tidak iterable -> int, boolean, dsb
     - Membership tidak bisa membandingkan list dengan string, number dengan string. Hanya bisa string dengan string (kecuali di casting ke string)
-- 
+
+    
+
+### Function dan Method
+
+- **Input**
+
+  - User bisa input sesuai (nilai dari variabel belum pasti)
+
+  - Gunakan input untuk memasukkan value dari user, terminal akan menunggu sampai user memasukkan value lalu `<enter>`
+
+  - Hasil dari `input()` -> **String** 
+
+  - Untuk perhitungan casting dulu dari `input()` ke integer
+
+  - Defaultnya antar {} diurutkan. Kalau dibuat urutan gak default gunakan angka -> `{0} {1} {2}` (lebih kecil diurutkan seperti di array)
+
+    ```python
+    ee = input()
+    ef = input()
+    f = "Hello {} {}".format(ee, ef)
+    g = "My Name is {1} {0}".format("Setiawan", "Sofyan")
+    ```
+
+  - Mau seperti template literal di JS, gunakan `f` sebelum quote string `""` -> `f"my name is {firstname} {lastname}"`
+
+  
+
+- **Function**
+
+  - Function -> Sesuai yang melakukan tugas spesifik berupa block of code
+
+  - Function -> Cara organisir kode
+
+  - Function dapat digunakan berkali kali -> calling
+
+  - Function -> menghindari repetitif, redundant process
+
+  - Functon -> Lebih mudah di trace, modular dan maintainable
+
+  - Membuat function -> 
+
+  - ````python
+    def namafunction(param1, param2): #param1=1, param2=4
+    	z = x + y
+      return z
+    
+    namafunction(1, 4) # 5
+    ````
+
+  - Keyword `def` -> namafunction -> parameter (bisa lebih dari 1, untuk mewakili/melabeli dan sebagai jalan masuk value dari passing value argument ketika di invoke)
+
+  - Kode di dalam blok function -> indentasi 1
+
+  - Function terdiri dari -> input (paramater), process (kode di dalam function), output (return)
+
+  - return -> output dari function sebagai value untuk variabel, output, argument function lain, dsb
+
+  - Argument harus diisi sesuai parameter. Kalau tidak diisi sesuai parameter -> `ERROR` missing required positional argument: 'y'
+
+  - Default Value diberikan jika argument tidak diisi -> pakai default value, jika diisi -> pakai value di argument
+
+  - Default value -> mencegah error required params
+
+    - `def namafunction(param1 = 0, param2 = 0):`
+
