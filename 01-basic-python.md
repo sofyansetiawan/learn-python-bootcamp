@@ -259,7 +259,39 @@
   - `//`(floor integer division)
     - Pembulatan kebawah `9 // 2` -> 4, bukan 4.5
   - `%` (remainder)
-    - Ada left portion
+    - Ada left portion -> pengurangan (bukan pembagian) terus menerus sampai sisa
   - `**` (double-star -> pow / pangkat)
 - Assignment
-  - 
+  - Assign value di python -> langsung override tipe datanya
+  - `x += 2` -> `x = x + 2`
+  - Contohnya -> `+=`, `-=`, `*=`, `/=`, `%=`, `**=`, `//=`
+  - Increment, decrement, mutiple -> seperti di Javascript
+  - Biasanya digunakan di dalam loop
+- Comparison
+  - Comparison -> pembanding antar 2 value
+  - Hasil dari Comparison -> Boolean `True` / `False` (Truthy - Falsy)
+  - Misalnya -> `2 == 2` -> True . `3 == "Halo"` -> False
+  - Negasi `!=`, Lebih besar `>`, Lebih besar atau sama dengan `>=`, Lebih kecil `<`, Lebih kecil atau sama dengan `<=`
+  - Bagian `>=` , `<=` bersifat ATAU jadi jika memenuhi kriteria salah satu -> True, jika tidak ada kriteria -> False 
+  - Strict Comparison??
+- Logical Operator
+  - Terdiri dari -> `and`, `or`, `not`
+  - `and`-> kalau dari 2 kondisi (comparison) semua menghasilkan True -> True, jika 1 kondisi menghasilkan False, 1 nya True -> False
+  - `or`-> kalau dari 2 kondisi (comparison) semua menghasilkan True -> True, jika 1 kondisi menghasilkan False, 1 nya menghasilkan True -> True (minimal 1 saja)
+  - `not` -> negasi dari True => False, False => True
+  - Contoh and => `3 > 2 and 4 > 2` => True and True -> True
+    - `3 > 2 and 4 > 2 and 2 > 1` => True and True and True -> True
+  - Contoh or => `3 > 2 or 2 > 2` => True or False -> True
+    - `3 > 4 *or* 2 > 3` => False or False -> False
+  - Contoh not => `not 3 > 2` => !True (negasi) => False
+- Identity Operator & Membership
+  - Identity dan membership menghasilkan -> True / False (Truthy Falsy)
+  - Terdiri -> `is`, `is not`
+    - is -> `==` (equals)
+    - is not `!=` (not equals)
+  - Terdiri -> `in`, `not in`
+    - in -> include in list/string?
+    - not in -> not include in list/string?
+    - Membership tidak bisa membandingkan tipe data yang tidak iterable -> int, boolean, dsb
+    - Membership tidak bisa membandingkan list dengan string, number dengan string. Hanya bisa string dengan string (kecuali di casting ke string)
+- 
