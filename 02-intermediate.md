@@ -35,6 +35,8 @@
 
   - Functon -> Lebih mudah di trace, modular dan maintainable
 
+  - Function -> di python tidak ada pembukan dan penutup {} -> tergantung blok kode
+
   - Membuat function -> 
 
   - ````python
@@ -61,3 +63,79 @@
 
     - `def namafunction(param1 = 0, param2 = 0):`
 
+- **Errors**
+
+  - Referensi -> Googling: Type errors in python
+
+  - Syntax Error
+
+    - Kesalahan syntax yang kurang lengkap (penulisan) sesuai ketentuan python
+    - `a = 3 +` , `a 3` , `print(` -> SyntaxError: invalid syntax atau lainnya
+    - Biasa langsung terdeteksi oleh editor misal -> vscode (tanpa merah zigzag)
+    - Error ini menunjukkan di line -> `, line 39` dan arrow/token yang menunjukkan karakter mana yang kurang
+
+  - Indentation Error
+
+    - Ketika menulis global variabel dengan indentasi -> tanpa indentasi adalah global
+
+    - Indentasi -> lingkup/scope kode yang seharusnya tergantung dia masuk ke scope apa (loop, condition, function)
+
+    - Indentasi -> scope tergantung simbol `:` (setelah baris simbol `:` harus di tab)
+
+    - Indentasi -> perbedaan tab
+
+    - Misalnya ->
+
+    - ```python
+      def funct1(first, last):
+      full = first + " " + last # indentasi karena dia ada blok function, bukan global
+          return print(full)
+      
+      if("a" == "a"):
+      print("Sesuai") # print harusnya di dalam
+      ```
+
+    - Python jangan di compress -> Karena indentasi
+
+    - Jika variabel `a` di define di scope function dan dipanggil di global maka error undefined
+
+  - Type Error
+
+    - Melakukan pekerjaan / operasi yang tidak didukung oleh type data tertentu / type data berbeda
+
+    - Misalnya: `x = 2 + "d"`
+
+      ```python
+      a = input("masukkan angka 1: ")
+      b = input("masukkan angka 2: ")
+      c = (a + b) + 2 # harus diubah ke int()
+      print(c)
+      ```
+
+  - Name Error
+
+    - Kalau kita mengakses atau memanggil variabel, function, class ->
+
+      - tidak ada di program kita
+      - tidak terdefinisi
+      - tidak di scope tersebut
+      - salah panggil nama (typo)
+
+    - Variabel -> `print(x)`, padahal x tidak ada
+
+    - Function -> 
+
+      ```python
+      def function1(a): 
+          print(a)
+      
+      functio(100) # NameError
+      ```
+
+  - Zero Division Error
+
+  - Index Error
+
+  - Runtime Error
+
+  - Attribute Error
