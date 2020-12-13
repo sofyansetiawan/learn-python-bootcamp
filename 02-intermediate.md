@@ -134,8 +134,119 @@
 
   - Zero Division Error
 
+    - Ketika kita melakukan pembagian dengan 0 -> karena akan menghasilkan **Infinity**
+    - `x = 4 / 0`
+    - Hanya berlaku jika sebuah type data integer/number
+
   - Index Error
+
+    - Ketika mengakses index:
+
+      - tidak ditemukan di array
+      - bukan type data number
+      - menghasilkan angka float
+      - dibawah 0 atau melebihi index terakhir array
+
+      ```python
+      word = "Hello World"
+      print(word[22]) # tidak ada index 22 karena index terakhir adalah 10
+      print(word[len(word)-1]) # bisa
+      print(word[-1]) # bisa
+      print(word[-30])
+      ```
+
+  - Attribute Error
+
+    - Error ini terjadi kalau menggunakan built-in function yang tidak tersedia di type data tersebut
+
+    - Misalkan menggunakan built string tapi untuk type data int
+
+      ```python
+      x = 40
+      x.title()
+      ```
 
   - Runtime Error
 
-  - Attribute Error
+    - Error yang lain tidak ditangkap oleh yang lain. Biasanya terjadi kesalahan logic program
+
+- Condition
+
+  - Menggunakan `if` -> Jika kriteria menghasilkan True maka flow akan masuk ke blok kode if. Jika tidak maka tidak dijalankan
+
+  - Karena menggunakan blok kode selalu pakai symbol `:` dan indentasi tab -> isi kodenya
+
+    ```python
+    x = 3
+    y = 3
+    if(x == y):
+        print("they are equals")
+    if(x != y):
+        print("the are not equals")
+    
+    print("program is working fine")
+    ```
+
+  - Jika flow tidak masuk ke True, maka akan menjalankan baris berikutnya diluar blok If. Jika ingin dihandle bagian False maka gunakan `else`
+
+    ```python
+    x = 3
+    y = 3
+    if(x == y):
+        print("they are equals")
+    else:
+        print("the are not equals")
+    
+    print("program is working fine")
+    ```
+
+  - Jika ada kriteria yang lain selain `if`, gunakan `elif`.
+
+  - `elif `-> bisa lebih dari 1 dan ketika tidak masuk ke `elif` pertama bisa masuk ke `elif` berikutnya
+
+  - Biasanya ada analogi -> tombol button quiz A, B, C, D atau remote control
+
+    ```python
+    a = 10
+    b = 10
+    c = 80
+    
+    if(a == b):
+        print("a is equals b")
+    elif(b > a):
+        print("b is greater than a")
+    elif(a > b):
+        print("a is greater than b")
+    else:
+        print("the are not equals")
+    ```
+
+  - Urutannya adalah if -> elif -> else
+
+  - Kamu bisa gunakan operator di dalam condition
+
+    - Comparison
+    - Logical
+
+    ```python
+    skor = 80
+    
+    if(skor >= 80 and skor <= 100):
+        print("Nilai Kamu A")
+    elif(skor >= 60 and skor < 80):
+        print("Nilai Kamu B")
+    elif(skor >= 40 and skor < 60):
+        print("Nilai Kamu C")
+    elif(skor >= 0 and skor < 40):
+        print("Nilai Kamu D")
+    else:
+        print("Nilai kamu tidak valid")
+    ```
+
+  - Kamu bisa buatkan `nested condition` -> condition di dalam condition
+
+    - Jika flow program masuk ke dalam blok condition maka akan diperiksa lagi ke condition apakah masuk ke blok condition berikutnya
+    - Nested condition -> dimulai dari if, tidak bisa langsung elif atau else
+
+  - 
+

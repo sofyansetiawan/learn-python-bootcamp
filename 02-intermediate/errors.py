@@ -37,3 +37,24 @@
 #     print(a)
 
 # functio(100) # salah panggil nama function
+
+# Zero Division
+# -------------
+
+# print(4/0)
+# x = 100/0
+
+# Index Error
+# -----------
+
+# word = "Hello World"
+# print(word[22]) # tidak ada index 22 karena index terakhir adalah 10
+# print(word[len(word)-1]) # bisa
+# print(word[-1]) # bisa
+# print(word[-30])
+
+# Attribute Error
+# ---------------
+
+# x = 40
+# x.title()
