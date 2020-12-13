@@ -170,7 +170,7 @@
 
     - Error yang lain tidak ditangkap oleh yang lain. Biasanya terjadi kesalahan logic program
 
-- Condition
+- **Condition**
 
   - Menggunakan `if` -> Jika kriteria menghasilkan True maka flow akan masuk ke blok kode if. Jika tidak maka tidak dijalankan
 
@@ -248,5 +248,29 @@
     - Jika flow program masuk ke dalam blok condition maka akan diperiksa lagi ke condition apakah masuk ke blok condition berikutnya
     - Nested condition -> dimulai dari if, tidak bisa langsung elif atau else
 
-  - 
+- **Loops**
+
+  - Loops -> Proses flow yang masuk condition yang dijalankan berulang ulang
+
+  - Loop ada jenisnya -> `for`, `while` 
+
+    - Step -> `in` (untuk list, dictionary) , `ranged()` (untuk angka)
+
+  - Umumnya loop dibutuhkan ketika:
+
+    - Melakukan output berulang ulang berdasarkan input
+    - Memanggil semua item list satu persatu
+    - Mencari karaketer di string satu persatu
+    - Melakukan perhitungan untuk mengisi nilai secara increment
+
+  - Untuk `for-in` (list)
+
+    ```python
+    list1 = [1,2,3,4,5,6,7,8,9]
+    
+    for item in list1: # item -> value element di list
+        print(item) # mencetak item setiap item berurutan
+    ```
+
+  - item -> menamai / melabeli setiap element/item di dalam list / dictionary (bukan Indexnya)
 
