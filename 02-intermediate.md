@@ -272,5 +272,123 @@
         print(item) # mencetak item setiap item berurutan
     ```
 
-  - item -> menamai / melabeli setiap element/item di dalam list / dictionary (bukan Indexnya)
+    - item -> menamai / melabeli setiap element/item di dalam list / dictionary (bukan Indexnya)
+    - For-in untuk list defaultnya adalah iterasi dari element pertama sampai element akhir dengan step 1 per satu
+
+  - Untuk `while`
+
+    - While umumnya dipakai kalau kita tidak tahu limit berapa kali sampai ada trigger untuk berhenti
+
+    - Biasanya tetap pakai start (initial condition, step (increment/decrement) dan finished (target/limit di condition)
+
+      ```python
+      i = 0 # initial condition
+      while i < 6:
+          print(i) # jika counter tidak dihentikan maka akan infinity loop
+          i+=1
+      ```
+
+    - Jika tidak ada step maka terjadi infinite loop (hentikan CTRL+C)
+
+    - While digunakan biasanya bukan untuk kasus list -> kondisi angka atau flagging (toggle) boolean
+
+  - Break
+
+    - Digunakan untuk exit condition dari loop di scope tersebut ketika sudah menyentuh iterasi ketika flow masuk kondisi break
+
+      ```python
+      listColor = ["A", "B", "C", "D"]
+      
+      for item in listColor:
+          if item == "C":
+              break; # ketika C maka berhenti tidak menjalankan iterasi berikutnya
+          print(item)
+      ```
+
+    - Break tidak akan menjalankan kode dibawahnya di dalam scope loop. Contohnya: tidak menjalankan print setelah break 
+
+  - Continue
+
+    - Digunakan untuk melakukan skip 1 step dari loop tapi tidak exit condition. Contohnya kalau loop list -> item tersebut di skip
+
+      ```
+      for item in listColor:
+          if item == "C":
+              continue; # ketika C akan di skip lanjut ke element list berikutnya
+          print(item)
+      ```
+
+    - Continue tidak akan menjalankan kode dibawahnya di dalam scope loop. Contohnya: tidak menjalankan print setelah continue
+
+  - Range Function
+
+    - Range -> Untuk melakukan looping dalam ranged angka (tanpa terikat tipe data list)
+
+    - Range terdiri dari argument -> start, stop dan step
+
+    - Default dari range adalah start < stop (kurang dari)
+
+    - Kalau diisi 1 argument -> stop. Dimulai dari 0 sampai angka stop, step 1 per satu. Misalkan `*for* x *in* range(4):` -> `0,1,2,3`
+
+    - Kalau diisi 2 argument -> start, stop. Dimulai dari angka start sampai angka stop, stepnya 1 per satu. Misalkan `*for* x *in* range(4, 10):` -> `4,5,6,7,8,9,`
+
+    - Kalau diisi 3 argument -> start, stop, step. Dimulai dari angka start sampai angka stop, stepnya tergantung angka step. Misalkan `*for* x *in* range(10, 200, 10):` -> `10, 20, 30, ... 170, 180, 190` (200 tidak ikut )
+
+      ```python
+      for x in range(4): # start 0, stop 4, step 1
+          print(x)
+      
+      for x in range(4, 10): # start 4, stop 10, step 1
+          print(x)
+      
+      for x in range(10, 200, 10): # start 0, stop 200, step 10
+          print(x)
+      ```
+
+  - Else di Loop
+
+    - Else di loop dijalankan kalau kondisi dari loop tidak terpenuhi atau ketika condition sudah selesai
+
+    - Sebenarnya else dalam loop tidak diperlukan
+
+      ```python
+      a = 100
+      
+      while(a < 200):
+          print(a)
+          a += 10
+      else:
+          print("Apa ini")
+      ```
+
+  - Nested Loop
+
+    - Nested loop digunakan umumnya ketika melakukan iterasi sampai selesai di sebuah step iterasi lain
+
+    - Umumnya kalau membuat pola atau memasangkan item list 1 dengan lainnya
+
+    - Jika ada for-in dalam for-in -> di iterasi pertama dari outerloop, inner loop akan melakukan iterasi dari awal sampai akhir sebanyak n sampai selesai. Setelah itu baru outerloop akan melakukan iterasi kedua, inner loop akan melakukan iterasi dari awal sampai akhir sebanyak n sampai selesai.. seterusnya sampai outer loop selesai
+
+      ```python
+      n = ["big", "small", "bold", "light", "heavy"]
+      
+      m = ["iron", "silver", "gold", "platinum", "diamond"]
+      
+      for size in n:
+          for matter in m:
+              print(size, matter) # item list1 pertama, item list2 pertama....n ->  item list1 kedua, item list2 pertama...n, item list1 ketiga, item list2 pertama...n
+      
+      a = 0
+      b = 0
+      for size in n: # iterasi luar tidak lanjut kalau iterasi dalam belum selesai
+          for matter in m: #iterasi inner loop berjalan awal sampai akhir di 1 step iterasi luar
+              print(n[a], m[b]) # akses by index
+              b += 1 # akses index 1 step
+          a += 1 # akses index 1 step untuk iterasi luar
+          b = 0 # reset ketika sudah selesai iterasi dalam supata tidak tertambah terus kalai lanjut iterasi luar bisa IndexError. Element 5 tapi iterasi luar 0 -> 0,1,2,3,4 -> iterasi luar 1 -> 5,6,7,8,9 harusnya balik jadi 0
+      ```
+
+    - Iterasi luar tidak lanjut kalau iterasi dalam belum selesai
+
+    - Iterasi inner loop berjalan awal sampai akhir di masing masing step iterasi luar
 
